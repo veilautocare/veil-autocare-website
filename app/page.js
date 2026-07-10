@@ -12,7 +12,7 @@ const featuredCars = [
     ],
   },
   {
-    src: "/images/gle63s.jpeg",
+    src: "/images/gle63.jpeg",
     label: "Mercedes-AMG GLE 63 S",
     services: [
       "Ceramic Maintenance",
