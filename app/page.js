@@ -125,7 +125,7 @@ export default function Home() {
 
       <footer id="contact" className="footer">
         <div>
-          <img src="/images/logo.jpeg" alt="Veil Auto Care" />
+          <img src="/images/logo.png" alt="Veil Auto Care" />
           <p>Premium auto detailing in Surrey.</p>
         </div>
         <div className="footer-links">
