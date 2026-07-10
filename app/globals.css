@@ -58,8 +58,8 @@ img { display: block; max-width: 100%; }
   font-weight: 500;
   line-height: 1;
   white-space: nowrap;
-  */
 }
+*/
 .nav {
   display: flex;
   gap: 32px;
