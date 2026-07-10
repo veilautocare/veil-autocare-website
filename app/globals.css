@@ -37,12 +37,11 @@ img { display: block; max-width: 100%; }
   flex-direction: column;
   align-items: center;
   text-decoration: none;
-  padding-top: 10px;
 }
 
 .logo-tagline {
-    margin-bottom: 22px;
-    margin-top: -10px;
+    margin-bottom: 12px;
+    margin-top: 8px;
     font-size: 10px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
