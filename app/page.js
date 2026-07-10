@@ -51,10 +51,7 @@ export default function Home() {
             <a className="button button-ghost" href="sms:7789399958">Message to Book</a>
           </div>
         </div>
-        <a className="scroll-cue" href="#services" aria-label="Scroll to services">
-          <span>Explore</span>
-          <i />
-        </a>
+      
       </section>
 
       <section id="services" className="section services-preview">
