@@ -37,19 +37,22 @@ img { display: block; max-width: 100%; }
   flex-direction: column;
   align-items: center;
   text-decoration: none;
+  padding-top: 10px;
 }
 
 .logo-tagline {
-    margin-top: -14px;
+    margin-bottom: 6px;
+    margin-top: -10px;
     font-size: 10px;
-    letter-spacing: 0.35em;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: rgba(255,255,255,.85);
+    color: rgba(255,255,255,0.88);
     font-weight: 500;
+    line-height: 1;
     white-space: nowrap;
 }
 .brand img {
-    width: 220px;
+    width: 260px;
     height: auto;
     object-fit: contain;
 }
