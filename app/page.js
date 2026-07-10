@@ -47,7 +47,7 @@ export default function Home() {
           <p className="eyebrow">Surrey, British Columbia</p>
          
           <div className="hero-actions">
-            <a className="button button-light" href="#services">View Services</a>
+            <a className="button button-light" href="#services">Explore Services</a>
             <a className="button button-ghost" href="sms:7789399958">Message to Book</a>
           </div>
         </div>
