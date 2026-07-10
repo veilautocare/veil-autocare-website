@@ -115,7 +115,7 @@ img { display: block; max-width: 100%; }
   to { opacity: 1; transform: translateY(0); }
 }
 .eyebrow {
-  margin: 0 0 18px;
+  margin: 0 0 28px;
   color: var(--gold);
   font-size: 12px;
   font-weight: 700;
@@ -413,9 +413,9 @@ h1 {
 
 .hero-brand h2 {
   margin: 0;
-  font-size: 38px;
+  font-size: 42px;
   font-weight: 700;
-  letter-spacing: 0.35em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: #fff;
 }
