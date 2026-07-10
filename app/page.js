@@ -4,10 +4,34 @@ import { useState } from "react";
 import "./globals.css";
 
 const featuredCars = [
-  { src: "/images/m5.jpeg", label: "BMW M5", type: "Performance Detail" },
-  { src: "/images/gle63.jpeg", label: "Mercedes-AMG GLE 63", type: "Exterior Detail" },
-  { src: "/images/range-rover.jpeg", label: "Range Rover", type: "Maintenance Detail" },
-  { src: "/images/cls550.jpeg", label: "Mercedes-Benz CLS 550", type: "Premium Detail" },
+  {
+    src: "/images/m5.jpeg",
+    label: "BMW M5 Competition",
+    services: [
+      "Maintenance Detail",
+    ],
+  },
+  {
+    src: "/images/gle63s.jpeg",
+    label: "Mercedes-AMG GLE 63 S",
+    services: [
+      "Ceramic Maintenance",
+    ],
+  },
+  {
+    src: "/images/range-rover.jpeg",
+    label: "Range Rover Autobiography",
+    services: [
+      "Ceramic Maintenance",
+    ],
+  },
+  {
+    src: "/images/cls550.jpeg",
+    label: "Mercedes-Benz CLS550",
+    services: [
+      "Premium Detail",
+    ],
+  },
 ];
 
 export default function Home() {
@@ -90,13 +114,9 @@ export default function Home() {
   <div className="section-heading horizontal">
     <div>
       <p className="eyebrow">Our Work</p>
-      <h2>Selected details.</h2>
+      <h2>A selection of vehicles detailed by Veil Auto Care.</h2>
     </div>
-
-    <p>
-      A closer look at vehicles trusted to Veil Auto Care.
-    </p>
-  </div>
+ </div>
 
   <div className="work-grid">
     {featuredCars.map((car) => (
