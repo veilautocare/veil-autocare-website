@@ -16,13 +16,7 @@ export default function Home() {
   return (
     <main>
       <header className="site-header">
-        <a className="brand" href="#home" aria-label="Veil Auto Care home">
-  <img src="/images/logo-v2.png" alt="Veil Auto Care" />
-
-  <span className="logo-tagline">
-    Beneath the Veil, Perfection.
-  </span>
-</a>
+        
         <nav className={menuOpen ? "nav open" : "nav"} aria-label="Main navigation">
           <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
           <a href="#services" onClick={() => setMenuOpen(false)}>Services</a>
@@ -45,6 +39,10 @@ export default function Home() {
         <img className="hero-image" src="/images/m5.jpeg" alt="BMW M5" />
         <div className="hero-overlay" />
         <div className="hero-content">
+            <div className="hero-brand">
+  <img src="/images/logo-v2.png" alt="Veil Auto Care" />
+  <p>Beneath the Veil, Perfection.</p>
+</div>
           <p className="eyebrow">Surrey, British Columbia</p>
           <h1>Premium Detailing, Exceptional Results.</h1>
           <p className="hero-copy">
