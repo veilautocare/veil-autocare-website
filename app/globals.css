@@ -30,10 +30,7 @@ img { display: block; max-width: 100%; }
   align-items: flex-start;
   justify-content: space-between;
   padding: 22px 5vw 0;
-  background: rgba(8, 8, 8, 0.45);
-backdrop-filter: blur(14px);
--webkit-backdrop-filter: blur(14px);
-border-bottom: 1px solid rgba(255,255,255,.08);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.82), rgba(0,0,0,0));
 }
 
 .nav {
