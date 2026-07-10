@@ -17,7 +17,7 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="brand" href="#home" aria-label="Veil Auto Care home">
-  <img src="/images/logo.jpeg" alt="Veil Auto Care" />
+  <img src="/images/logo.png" alt="Veil Auto Care" />
 
   <span className="logo-tagline">
     Beneath the Veil, Perfection.
