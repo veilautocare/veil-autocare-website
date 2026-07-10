@@ -42,12 +42,13 @@ img { display: block; max-width: 100%; }
 
 .brand img {
   width: 220px;
-  height: auto;
+  height: 85px;
   object-fit: contain;
+  object-position: center;
 }
 
 .logo-tagline {
-  margin-top: 4px;
+  margin-top: 2px;
   margin-bottom: 0;
   font-size: 9px;
   letter-spacing: 0.28em;
