@@ -113,17 +113,17 @@ export default function Home() {
       </section>
 
       <section className="section statement">
-        <p className="eyebrow">Mobile Service</p>
-        <h2>Premium care without leaving your driveway.</h2>
+        <p className="eyebrow">Premium Detailing</p>
+        <h2>Premium auto detailing, done right.</h2>
         <p>
-          Serving Surrey with convenient mobile detailing, seven days a week from 9 AM to 9 PM.
+          Professional interior, exterior, ceramic protection, and maintenance detailing. Visit us or book our mobile service.
         </p>
       </section>
 
       <footer id="contact" className="footer">
         <div>
           <img src="/images/logo.jpeg" alt="Veil Auto Care" />
-          <p>Premium mobile auto detailing in Surrey.</p>
+          <p>Premium auto detailing in Surrey.</p>
         </div>
         <div className="footer-links">
           <a href="tel:7789399958">778-939-9958</a>
