@@ -87,13 +87,32 @@ export default function Home() {
       </section>
 
       <section id="work" className="section work-section">
-        <div className="section-heading horizontal">
-          <div>
-            <p className="eyebrow">Selected Work</p>
-            <h2>Finished with intention.</h2>
-          </div>
-          <p>A look at some of the vehicles trusted to Veil Auto Care.</p>
+  <div className="section-heading horizontal">
+    <div>
+      <p className="eyebrow">Our Work</p>
+      <h2>Selected details.</h2>
+    </div>
+
+    <p>
+      A closer look at vehicles trusted to Veil Auto Care.
+    </p>
+  </div>
+
+  <div className="work-grid">
+    {featuredCars.map((car) => (
+      <article className="work-card" key={car.label}>
+        <img src={car.src} alt={car.label} />
+
+        <div className="work-overlay" />
+
+        <div className="work-info">
+          <p>{car.type}</p>
+          <h3>{car.label}</h3>
         </div>
+      </article>
+    ))}
+  </div>
+</section>
 
         <div className="work-grid">
           {featuredCars.map((car) => (
