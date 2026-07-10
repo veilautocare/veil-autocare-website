@@ -41,7 +41,7 @@ img { display: block; max-width: 100%; }
 }
 
 .brand img {
-  width: 220px;
+  width: 280px;
   height: 85px;
   object-fit: contain;
   object-position: center;
