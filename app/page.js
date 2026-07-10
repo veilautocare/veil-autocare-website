@@ -40,14 +40,12 @@ export default function Home() {
         <div className="hero-overlay" />
         <div className="hero-content">
             <div className="hero-brand">
-  <img src="/images/logo-v2.png" alt="Veil Auto Care" />
-  <p>Beneath the Veil, Perfection.</p>
+  <h2>VEIL AUTOCARE</h2>
+  <p>Beneath the Veil. Perfection.</p>
 </div>
+            
           <p className="eyebrow">Surrey, British Columbia</p>
-          <h1>Premium Detailing, Exceptional Results.</h1>
-          <p className="hero-copy">
-            Professional interior and exterior care for vehicles that deserve more than a basic wash.
-          </p>
+         
           <div className="hero-actions">
             <a className="button button-light" href="#services">View Services</a>
             <a className="button button-ghost" href="sms:7789399958">Message to Book</a>
