@@ -113,21 +113,7 @@ export default function Home() {
     ))}
   </div>
 </section>
-
-        <div className="work-grid">
-          {featuredCars.map((car) => (
-            <article className="work-card" key={car.label}>
-              <img src={car.src} alt={car.label} />
-              <div className="work-info">
-                <p>{car.type}</p>
-                <h3>{car.label}</h3>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section statement">
+  <section className="section statement">
         <p className="eyebrow">Premium Detailing</p>
         <h2>Premium auto detailing, done right.</h2>
         <p>
