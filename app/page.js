@@ -17,9 +17,12 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="brand" href="#home" aria-label="Veil Auto Care home">
-          <img src="/images/logo.jpeg" alt="Veil Auto Care" />
-        </a>
+  <img src="/images/logo.jpeg" alt="Veil Auto Care" />
 
+  <span className="logo-tagline">
+    Beneath the Veil, Perfection.
+  </span>
+</a>
         <nav className={menuOpen ? "nav open" : "nav"} aria-label="Main navigation">
           <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
           <a href="#services" onClick={() => setMenuOpen(false)}>Services</a>
@@ -43,7 +46,7 @@ export default function Home() {
         <div className="hero-overlay" />
         <div className="hero-content">
           <p className="eyebrow">Surrey, British Columbia</p>
-          <h1>Premium mobile detailing, brought to you.</h1>
+          <h1>Premium Detailing, Exceptional Results.</h1>
           <p className="hero-copy">
             Professional interior and exterior care for vehicles that deserve more than a basic wash.
           </p>
