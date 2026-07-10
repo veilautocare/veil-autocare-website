@@ -42,7 +42,7 @@ export default function Home() {
       </header>
 
       <section id="home" className="hero">
-        <img className="hero-image" src="/images/hero-x5m.jpeg" alt="Detailed white BMW X5 M" />
+        <img className="hero-image" src="/images/m5.jpeg" alt="BMW M5" />
         <div className="hero-overlay" />
         <div className="hero-content">
           <p className="eyebrow">Surrey, British Columbia</p>
