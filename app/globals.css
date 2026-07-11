@@ -1022,3 +1022,10 @@ h1 {
     padding: 10px 8px;
   }
 }
+.packages-section {
+  padding-bottom: 40px;
+}
+
+.membership-section {
+  margin-top: 0;
+}
