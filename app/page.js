@@ -224,6 +224,34 @@ const [selectedPackage, setSelectedPackage] = useState(null);
     )}
   </div>
 </section>
+    <section id="work" className="section work-section">
+  <div className="section-heading horizontal">
+    <div>
+      <p className="eyebrow">Our Work</p>
+      <h2>A selection of vehicles detailed by Veil Auto Care.</h2>
+    </div>
+  </div>
+
+  <div className="work-grid">
+    {featuredCars.map((car) => (
+      <article className="work-card" key={car.label}>
+        <img src={car.src} alt={car.label} />
+
+        <div className="work-overlay" />
+
+        <div className="work-info">
+          <h3>{car.label}</h3>
+
+          <div className="work-services">
+            {car.services.map((service) => (
+              <span key={service}>{service}</span>
+            ))}
+          </div>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
 
   <section className="section statement">
         <p className="eyebrow">Premium Detailing</p>
