@@ -33,11 +33,76 @@ const featuredCars = [
     ],
   },
 ];
+const packageDetails = {
+  "full-level-1": {
+    level: "Level 1",
+    title: "Interior / Exterior Detail",
+    price: "$100–120",
+    description: "Essential care for regularly maintained vehicles.",
+    interior: [
+      "Interior vacuum",
+      "Dashboard and console cleaned",
+      "Door panels cleaned",
+      "Interior windows cleaned",
+      "Floor mats cleaned",
+    ],
+    exterior: [
+      "Exterior hand wash",
+      "Wheels and tires cleaned",
+      "Tire dressing applied",
+      "Exterior windows cleaned",
+    ],
+  },
+
+  "full-level-2": {
+    level: "Level 2",
+    title: "Interior / Exterior Detail",
+    price: "$130–160",
+    description:
+      "Deeper interior cleaning paired with a more refined exterior detail.",
+    interior: [
+      "Everything included in Level 1",
+      "Steam cleaning",
+      "Carpet and floor mat shampoo",
+      "Leather and vinyl conditioning",
+      "Air vents and crevices detailed",
+    ],
+    exterior: [
+      "Everything included in Level 1",
+      "Clay bar treatment",
+      "Wheel barrels deep cleaned",
+      "Ceramic sealant applied",
+    ],
+  },
+
+  "full-level-3": {
+    level: "Level 3",
+    title: "Interior / Exterior Detail",
+    price: "$160–200",
+    description:
+      "Our most complete interior and exterior restoration package.",
+    interior: [
+      "Everything included in Level 2",
+      "Heavy stain treatment",
+      "Deep fabric extraction",
+      "Premium interior restoration",
+    ],
+    exterior: [
+      "Everything included in Level 2",
+      "Paint decontamination",
+      "Engine bay detail",
+      "Premium ceramic sealant",
+    ],
+  },
+};
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeService, setActiveService] = useState("full");
 const [selectedPackage, setSelectedPackage] = useState(null);
+  const selectedDetails = selectedPackage
+  ? packageDetails[selectedPackage]
+  : null;
 
   return (
     <main>
@@ -486,6 +551,70 @@ const [selectedPackage, setSelectedPackage] = useState(null);
           Professional interior, exterior, ceramic protection, and maintenance detailing. Visit us or book our mobile service.
         </p>
       </section>
+      {selectedDetails && (
+  <div
+    className="package-modal-backdrop"
+    onClick={() => setSelectedPackage(null)}
+  >
+    <div
+      className="package-modal"
+      onClick={(event) => event.stopPropagation()}
+    >
+      <button
+        className="package-modal-close"
+        onClick={() => setSelectedPackage(null)}
+        aria-label="Close package details"
+      >
+        ×
+      </button>
+
+      <p className="package-modal-level">{selectedDetails.level}</p>
+      <h2>{selectedDetails.title}</h2>
+
+      <div className="package-modal-summary">
+        <div>
+          <span>Package</span>
+          <strong>{selectedDetails.price}</strong>
+        </div>
+
+        <p>{selectedDetails.description}</p>
+      </div>
+
+      <div className="package-modal-group">
+        <h3>Interior</h3>
+        <ul>
+          {selectedDetails.interior.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="package-modal-group">
+        <h3>Exterior</h3>
+        <ul>
+          {selectedDetails.exterior.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </div>
+
+      <p className="package-modal-note">
+        We’ll confirm your vehicle size, service location, and appointment
+        time before your booking is finalized.
+      </p>
+
+      <div className="package-modal-actions">
+        <a href="sms:7789399958" className="package-modal-button primary">
+          Message to Book
+        </a>
+
+        <a href="tel:7789399958" className="package-modal-button">
+          Call to Book
+        </a>
+      </div>
+    </div>
+  </div>
+)}
 
       <footer id="contact" className="footer">
         <div>
