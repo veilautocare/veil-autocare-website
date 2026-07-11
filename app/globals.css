@@ -1021,6 +1021,14 @@ h1 {
     flex: 1;
     padding: 10px 8px;
   }
+  .membership-panel {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .membership-details {
+    padding: 24px;
+  }
 }
 .packages-section {
   padding-bottom: 40px;
@@ -1028,4 +1036,103 @@ h1 {
 
 .membership-section {
   margin-top: 0;
+}
+.membership-heading {
+  max-width: 820px;
+  margin-bottom: 28px;
+}
+
+.membership-heading h2 {
+  margin: 10px 0 14px;
+}
+
+.membership-heading p:last-child {
+  color: rgba(255, 255, 255, 0.68);
+  line-height: 1.7;
+}
+
+.membership-panel {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 56px;
+  align-items: stretch;
+  padding-top: 34px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.membership-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.membership-name {
+  margin: 0 0 12px;
+  color: rgba(212, 175, 55, 0.95);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.membership-copy h3 {
+  margin: 0;
+  font-size: clamp(34px, 5vw, 62px);
+  line-height: 1;
+}
+
+.membership-price {
+  margin: 18px 0 12px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.membership-description {
+  max-width: 580px;
+  color: rgba(255, 255, 255, 0.68);
+  line-height: 1.7;
+}
+
+.membership-details {
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.025);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.membership-details ul {
+  margin: 0 0 30px;
+  padding-left: 20px;
+}
+
+.membership-details li {
+  margin-bottom: 13px;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.membership-button {
+  display: flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: #fff;
+  color: #080808;
+  font-weight: 800;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.membership-button:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.membership-note {
+  margin: 24px 0 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
 }
