@@ -254,29 +254,27 @@ const packageDetails = {
   },
 };
 function RandomWorkCard({ images, cardIndex }) {
-  const [activeImage, setActiveImage] = useState(0);
+  const [activeImage, setActiveImage] = useState(cardIndex);
 
   useEffect(() => {
-    if (images.length === 0) return;
+    if (images.length < 2) return;
 
     setActiveImage(cardIndex % images.length);
 
-    if (images.length === 1) return;
-
     const interval = setInterval(() => {
       setActiveImage((current) => {
-        let next = current;
+        let nextImage;
 
-        while (next === current) {
-          next = Math.floor(Math.random() * images.length);
-        }
+        do {
+          nextImage = Math.floor(Math.random() * images.length);
+        } while (nextImage === current);
 
-        return next;
+        return nextImage;
       });
-    }, 3200 + cardIndex * 550);
+    }, 3500 + cardIndex * 500);
 
     return () => clearInterval(interval);
-  }, [images, cardIndex]);
+  }, [images.length, cardIndex]);
 
   if (!images.length) return null;
 
