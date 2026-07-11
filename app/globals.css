@@ -529,3 +529,197 @@ h1 {
     object-fit: cover;
   }
 }
+.pricing-section {
+  background: #080808;
+  padding-top: 140px;
+}
+
+.pricing-heading {
+  max-width: 900px;
+  margin-bottom: 42px;
+}
+
+.pricing-heading h2 {
+  max-width: 850px;
+  font-size: clamp(44px, 6vw, 82px);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.pricing-heading > p:last-child {
+  max-width: 720px;
+  margin-top: 22px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.service-tabs {
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  gap: 6px;
+  margin-bottom: 42px;
+  padding: 6px;
+  overflow-x: auto;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.service-tabs button {
+  flex: 0 0 auto;
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.65);
+  background: transparent;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.service-tabs button.active {
+  color: #080808;
+  background: #fff;
+}
+
+.package-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+.package-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 570px;
+  padding: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 22px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.055),
+    rgba(255, 255, 255, 0.018)
+  );
+}
+
+.package-card.featured {
+  border-color: var(--gold);
+  box-shadow: 0 0 35px rgba(201, 160, 106, 0.1);
+}
+
+.package-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  padding: 7px 16px;
+  transform: translateX(-50%);
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  color: var(--gold);
+  background: #080808;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.package-level {
+  margin: 0 0 18px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.package-card h3 {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 500;
+}
+
+.package-description {
+  margin: 16px 0 24px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 16px;
+}
+
+.package-card ul {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 32px;
+  padding-left: 20px;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.45;
+}
+
+.package-button {
+  width: 100%;
+  min-height: 50px;
+  margin-top: auto;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  color: #fff;
+  background: transparent;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.package-button:hover {
+  color: #080808;
+  background: #fff;
+}
+
+.service-placeholder {
+  grid-column: 1 / -1;
+  padding: 60px 0;
+  color: rgba(255, 255, 255, 0.65);
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .package-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .package-card {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .pricing-section {
+    padding-top: 105px;
+  }
+
+  .pricing-heading h2 {
+    font-size: 44px;
+  }
+
+  .service-tabs {
+    width: 100%;
+    border-radius: 16px;
+  }
+
+  .service-tabs button {
+    padding: 11px 15px;
+  }
+
+  .package-card {
+    padding: 26px 22px;
+    border-radius: 18px;
+  }
+
+  .package-card h3 {
+    font-size: 28px;
+  }
+}
