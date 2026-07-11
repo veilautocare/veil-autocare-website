@@ -271,12 +271,83 @@ const [selectedPackage, setSelectedPackage] = useState(null);
   </>
 )}
 
-    {activeService === "exterior" && (
-      <p className="service-placeholder">
-        Exterior packages are being added next.
-      </p>
-    )}
+   {activeService === "exterior" && (
+  <>
+    <article className="package-card">
+      <p className="package-level">Level 1 Exterior Detail</p>
+      <h3>Starting at $50</h3>
+      <p className="package-description">Essential exterior care.</p>
 
+      <ul>
+        <li>Pre-rinse</li>
+        <li>Foam hand wash</li>
+        <li>Wheels and tires cleaned</li>
+        <li>Tire dressing applied</li>
+        <li>Exterior windows cleaned</li>
+        <li>Door jambs wiped</li>
+        <li>Light bug removal</li>
+      </ul>
+
+      <button
+        className="package-button"
+        onClick={() => setSelectedPackage("exterior-level-1")}
+      >
+        Select Package
+      </button>
+    </article>
+
+    <article className="package-card featured">
+      <span className="package-badge">Best Value</span>
+      <p className="package-level">Level 2 Exterior Detail</p>
+      <h3>Starting at $70</h3>
+      <p className="package-description">
+        Deeper exterior cleaning with added protection.
+      </p>
+
+      <ul>
+        <li>Everything in Level 1</li>
+        <li>Iron decontamination</li>
+        <li>Clay bar treatment</li>
+        <li>Wheel barrels deep cleaned</li>
+        <li>Plastic trim restored</li>
+        <li>Ceramic sealant applied</li>
+        <li>Water spot removal where possible</li>
+      </ul>
+
+      <button
+        className="package-button"
+        onClick={() => setSelectedPackage("exterior-level-2")}
+      >
+        Select Package
+      </button>
+    </article>
+
+    <article className="package-card">
+      <p className="package-level">Level 3 Exterior Detail</p>
+      <h3>Starting at $100</h3>
+      <p className="package-description">
+        Complete exterior restoration and protection.
+      </p>
+
+      <ul>
+        <li>Everything in Level 2</li>
+        <li>Engine bay detail</li>
+        <li>Premium ceramic sealant</li>
+        <li>Exhaust tips polished</li>
+        <li>Paint decontamination</li>
+        <li>Exterior trim restoration</li>
+        <li>Fine-detail finishing touches</li>
+      </ul>
+
+      <button
+        className="package-button"
+        onClick={() => setSelectedPackage("exterior-level-3")}
+      >
+        Select Package
+      </button>
+    </article>
+  </>
+)}
     {activeService === "ceramic" && (
       <p className="service-placeholder">
         Ceramic coating packages are being added next.
