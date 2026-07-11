@@ -961,15 +961,64 @@ h1 {
     border-radius:28px;
     padding:55px;
 }
-.membership-section{
-    max-width:1200px;
-    margin:120px auto;
-    padding:0 40px;
+.membership-section {
+  max-width: 1200px;
+  margin: 45px auto 100px;
+  padding: 0 40px;
 }
 
-.membership-card{
-    background:#111;
-    border:1px solid rgba(212,175,55,.25);
-    border-radius:28px;
-    padding:55px;
+.membership-card {
+  background: #111;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 28px;
+  padding: 48px;
+}
+.membership-tabs {
+  display: inline-flex;
+  gap: 6px;
+  padding: 5px;
+  margin: 26px 0 32px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.membership-tabs button {
+  border: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.72);
+  padding: 10px 22px;
+  border-radius: 999px;
+  font: inherit;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.membership-tabs button:hover {
+  color: #fff;
+}
+
+.membership-tabs button.active {
+  background: #fff;
+  color: #080808;
+}
+@media (max-width: 768px) {
+  .membership-section {
+    margin: 35px auto 75px;
+    padding: 0 18px;
+  }
+
+  .membership-card {
+    padding: 28px 22px;
+  }
+
+  .membership-tabs {
+    display: flex;
+    width: 100%;
+  }
+
+  .membership-tabs button {
+    flex: 1;
+    padding: 10px 8px;
+  }
 }
