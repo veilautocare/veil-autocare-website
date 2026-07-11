@@ -306,11 +306,9 @@ const [selectedPackage, setSelectedPackage] = useState(null);
 
       <ul>
         <li>Everything in Level 1</li>
-        <li>Iron decontamination</li>
-        <li>Clay bar treatment</li>
+        
         <li>Wheel barrels deep cleaned</li>
         <li>Plastic trim restored</li>
-        <li>Ceramic sealant applied</li>
         <li>Water spot removal where possible</li>
       </ul>
 
@@ -331,11 +329,11 @@ const [selectedPackage, setSelectedPackage] = useState(null);
 
       <ul>
         <li>Everything in Level 2</li>
+        <li>Iron decontamination</li>
+        <li>Clay bar treatment</li>
         <li>Engine bay detail</li>
-        <li>Premium ceramic sealant</li>
-        <li>Exhaust tips polished</li>
-        <li>Paint decontamination</li>
-        <li>Exterior trim restoration</li>
+         <li>Ceramic sealant applied</li>
+         <li>Exterior trim restoration</li>
         <li>Fine-detail finishing touches</li>
       </ul>
 
