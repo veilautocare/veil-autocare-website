@@ -812,10 +812,31 @@ const [selectedPackage, setSelectedPackage] = useState(null);
           <p>Premium auto detailing in Surrey.</p>
         </div>
         <div className="footer-links">
+  <a
+  href="https://maps.google.com/?q=6998+149+Street,+Surrey,+BC+V3S+1K1"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  📍 6998 149 Street, Surrey, BC V3S 1K1
+</a>
           <a href="tel:7789399958">778-939-9958</a>
           <a href="sms:7789399958">Message to Book</a>
           <a href="mailto:veilautocare.1@gmail.com">veilautocare.1@gmail.com</a>
-          <a href="https://instagram.com/veilautocare" target="_blank" rel="noreferrer">@veilautocare</a>
+          <a
+  href="https://www.instagram.com/veilautocare"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Instagram — @veilautocare
+</a>
+
+<a
+  href="https://www.tiktok.com/@veilautocare"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  TikTok — @veilautocare
+</a>
         </div>
       </footer>
 
