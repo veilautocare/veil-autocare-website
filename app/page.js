@@ -36,6 +36,8 @@ const featuredCars = [
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeService, setActiveService] = useState("full");
+const [selectedPackage, setSelectedPackage] = useState(null);
 
   return (
     <main>
@@ -78,61 +80,151 @@ export default function Home() {
       
       </section>
 
-      <section id="services" className="section services-preview">
-        <div className="section-heading">
-          <p className="eyebrow">Our Services</p>
-          <h2>Care built around your vehicle.</h2>
-          <p>
-            From maintenance details to long-term paint protection, every service is delivered with
-            a clean, careful approach.
-          </p>
-        </div>
+     <section id="services" className="section pricing-section">
+  <div className="section-heading pricing-heading">
+    <p className="eyebrow">Services</p>
+    <h2>Choose the level of care your vehicle deserves.</h2>
+    <p>
+      Premium mobile detailing throughout Surrey and the Lower Mainland.
+      Final pricing depends on vehicle size and condition.
+    </p>
+  </div>
 
-        <div className="service-grid">
-          <article className="service-card">
-            <span>01</span>
-            <h3>Detailing</h3>
-            <p>Interior, exterior, basic, and premium packages starting at $60.</p>
-            <a href="#contact">Explore packages</a>
-          </article>
-          <article className="service-card">
-            <span>02</span>
-            <h3>Paint Correction</h3>
-            <p>Restore clarity and gloss by reducing swirls and light defects.</p>
-            <strong>Starting at $399</strong>
-          </article>
-          <article className="service-card">
-            <span>03</span>
-            <h3>Ceramic Coating</h3>
-            <p>Long-lasting gloss, protection, and easier maintenance.</p>
-            <strong>Starting at $699</strong>
-          </article>
-        </div>
-      </section>
+  <div className="service-tabs">
+    <button
+      className={activeService === "full" ? "active" : ""}
+      onClick={() => setActiveService("full")}
+    >
+      Full Detail
+    </button>
 
-      <section id="work" className="section work-section">
-  <div className="section-heading horizontal">
-    <div>
-      <p className="eyebrow">Our Work</p>
-      <h2>A selection of vehicles detailed by Veil Auto Care.</h2>
-    </div>
- </div>
+    <button
+      className={activeService === "interior" ? "active" : ""}
+      onClick={() => setActiveService("interior")}
+    >
+      Interior
+    </button>
 
-  <div className="work-grid">
-    {featuredCars.map((car) => (
-      <article className="work-card" key={car.label}>
-        <img src={car.src} alt={car.label} />
+    <button
+      className={activeService === "exterior" ? "active" : ""}
+      onClick={() => setActiveService("exterior")}
+    >
+      Exterior
+    </button>
 
-        <div className="work-overlay" />
+    <button
+      className={activeService === "ceramic" ? "active" : ""}
+      onClick={() => setActiveService("ceramic")}
+    >
+      Ceramic Coating
+    </button>
 
-        <div className="work-info">
-          <p>{car.type}</p>
-          <h3>{car.label}</h3>
-        </div>
-      </article>
-    ))}
+    <button
+      className={activeService === "addons" ? "active" : ""}
+      onClick={() => setActiveService("addons")}
+    >
+      Add-Ons
+    </button>
+  </div>
+
+  <div className="package-grid">
+    {activeService === "full" && (
+      <>
+        <article className="package-card">
+          <p className="package-level">Level 1 Detail</p>
+          <h3>Starting at $100</h3>
+          <p className="package-description">Essential care.</p>
+
+          <ul>
+            <li>Interior vacuum</li>
+            <li>Dashboard and console cleaned</li>
+            <li>Door panels cleaned</li>
+            <li>Interior windows cleaned</li>
+            <li>Exterior hand wash</li>
+            <li>Wheels and tires cleaned</li>
+            <li>Tire dressing</li>
+          </ul>
+
+          <button
+            className="package-button"
+            onClick={() => setSelectedPackage("full-level-1")}
+          >
+            Select Package
+          </button>
+        </article>
+
+        <article className="package-card featured">
+          <span className="package-badge">Best Value</span>
+          <p className="package-level">Level 2 Detail</p>
+          <h3>Starting at $130</h3>
+          <p className="package-description">Deep refresh.</p>
+
+          <ul>
+            <li>Everything in Level 1</li>
+            <li>Steam cleaning</li>
+            <li>Carpet and floor mat shampoo</li>
+            <li>Leather and vinyl conditioning</li>
+            <li>Clay bar treatment</li>
+            <li>Ceramic sealant</li>
+          </ul>
+
+          <button
+            className="package-button"
+            onClick={() => setSelectedPackage("full-level-2")}
+          >
+            Select Package
+          </button>
+        </article>
+
+        <article className="package-card">
+          <p className="package-level">Level 3 Detail</p>
+          <h3>Starting at $160</h3>
+          <p className="package-description">Complete reset.</p>
+
+          <ul>
+            <li>Everything in Level 2</li>
+            <li>Paint decontamination</li>
+            <li>Engine bay detail</li>
+            <li>Premium interior restoration</li>
+            <li>Ceramic sealant</li>
+          </ul>
+
+          <button
+            className="package-button"
+            onClick={() => setSelectedPackage("full-level-3")}
+          >
+            Select Package
+          </button>
+        </article>
+      </>
+    )}
+
+    {activeService === "interior" && (
+      <p className="service-placeholder">
+        Interior packages are being added next.
+      </p>
+    )}
+
+    {activeService === "exterior" && (
+      <p className="service-placeholder">
+        Exterior packages are being added next.
+      </p>
+    )}
+
+    {activeService === "ceramic" && (
+      <p className="service-placeholder">
+        Ceramic coating packages are being added next.
+      </p>
+    )}
+
+    {activeService === "addons" && (
+      <p className="service-placeholder">
+        Add-ons are being added next.
+      </p>
+    )}
   </div>
 </section>
+
   <section className="section statement">
         <p className="eyebrow">Premium Detailing</p>
         <h2>Premium auto detailing, done right.</h2>
