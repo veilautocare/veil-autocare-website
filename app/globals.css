@@ -343,8 +343,29 @@ h1 {
   }
   .horizontal { display: block; }
   .horizontal > p { width: auto; margin-top: 22px; }
-  .work-grid { grid-template-columns: 1fr; }
-  .work-card { min-height: 480px; }
+.work-grid {
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.work-card {
+  min-height: 430px;
+}
+
+.work-card img {
+  object-position: center;
+}
+
+.work-info {
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+}
+
+.work-info h3 {
+  font-size: 24px;
+  line-height: 1.1;
+}
   .footer { flex-direction: column; padding: 70px 20px 120px; }
   .footer-links { text-align: left; }
 
