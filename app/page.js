@@ -42,7 +42,6 @@ const packageDetails = {
       "Everything included in Level 1",
       "Clay bar treatment",
       "Wheel barrels deep cleaned",
-      "Ceramic sealant applied",
     ],
   },
 
