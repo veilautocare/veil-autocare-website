@@ -333,10 +333,62 @@ function WorkGallery() {
     </div>
   );
 }
+const membershipPlans = {
+  essential: {
+    name: "Essential",
+    schedule: "Monthly",
+    price: "Starting at $100",
+    description:
+      "A reliable monthly maintenance plan for keeping your vehicle consistently clean and protected.",
+    items: [
+      "Interior maintenance",
+      "Exterior maintenance wash",
+      "Wheels and tires cleaned",
+      "Interior and exterior glass cleaned",
+      "Vacuum and wipe down",
+    ],
+    button: "Join Essential",
+  },
+
+  signature: {
+    name: "Signature",
+    schedule: "Every 2 Weeks",
+    price: "Starting at $85",
+    description:
+      "More frequent care for clients who want their vehicle looking showroom-ready at all times.",
+    items: [
+      "Interior maintenance",
+      "Exterior maintenance wash",
+      "Wheels and tires cleaned",
+      "Interior and exterior glass cleaned",
+      "Vacuum and wipe down",
+      "Priority scheduling",
+    ],
+    button: "Join Signature",
+  },
+
+  tailored: {
+    name: "Tailored",
+    schedule: "Custom Schedule",
+    price: "Custom Pricing",
+    description:
+      "A personalized maintenance plan built around your vehicle, driving habits, and preferred schedule.",
+    items: [
+      "Personalized visit frequency",
+      "Custom service selection",
+      "Multiple vehicle options",
+      "Priority scheduling",
+      "Built around your specific needs",
+    ],
+    button: "Contact Us",
+  },
+};
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeService, setActiveService] = useState("full");
 const [selectedPackage, setSelectedPackage] = useState(null);
+  const [activeMembership, setActiveMembership] = useState("essential");
+  
   const selectedDetails = selectedPackage
   ? packageDetails[selectedPackage]
   : null;
@@ -750,6 +802,76 @@ const [selectedPackage, setSelectedPackage] = useState(null);
   </>
 )}
   </div>
+</section>
+    <section className="section membership-section">
+  <div className="membership-heading">
+    <p className="eyebrow">Maintenance Membership</p>
+    <h2>Protect the finish. Preserve the experience.</h2>
+    <p>
+      After your initial detail, our maintenance memberships keep your vehicle
+      consistently clean, protected, and ready to drive year-round.
+    </p>
+  </div>
+
+  <div className="membership-tabs">
+    <button
+      className={activeMembership === "essential" ? "active" : ""}
+      onClick={() => setActiveMembership("essential")}
+    >
+      Essential
+    </button>
+
+    <button
+      className={activeMembership === "signature" ? "active" : ""}
+      onClick={() => setActiveMembership("signature")}
+    >
+      Signature
+    </button>
+
+    <button
+      className={activeMembership === "tailored" ? "active" : ""}
+      onClick={() => setActiveMembership("tailored")}
+    >
+      Tailored
+    </button>
+  </div>
+
+  <div className="membership-panel">
+    <div className="membership-copy">
+      <p className="membership-name">
+        {membershipPlans[activeMembership].name}
+      </p>
+
+      <h3>{membershipPlans[activeMembership].schedule}</h3>
+
+      <p className="membership-price">
+        {membershipPlans[activeMembership].price}
+      </p>
+
+      <p className="membership-description">
+        {membershipPlans[activeMembership].description}
+      </p>
+    </div>
+
+    <div className="membership-details">
+      <ul>
+        {membershipPlans[activeMembership].items.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+
+      <a
+        href="sms:7789399958"
+        className="membership-button"
+      >
+        {membershipPlans[activeMembership].button}
+      </a>
+    </div>
+  </div>
+
+  <p className="membership-note">
+    Maintenance memberships are available after an initial detail.
+  </p>
 </section>
     <section id="work" className="section work-section">
   <div className="section-heading horizontal">
