@@ -467,7 +467,6 @@ const [selectedPackage, setSelectedPackage] = useState(null);
             <li>Carpet and floor mat shampoo</li>
             <li>Leather and vinyl conditioning</li>
             <li>Clay bar treatment</li>
-            <li>Ceramic sealant</li>
           </ul>
 
           <button
