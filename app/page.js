@@ -434,7 +434,7 @@ const [selectedPackage, setSelectedPackage] = useState(null);
       
       </section>
 
-     <section id="services" className="section pricing-section">
+     <section id="services" className="section pricing-section packages-section">
   <div className="section-heading pricing-heading">
     <p className="eyebrow">Services</p>
     <h2>Choose the level of care your vehicle deserves.</h2>
