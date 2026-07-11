@@ -949,3 +949,15 @@ h1 {
 .work-card:hover .image-stack img.active {
   transform: scale(1.035);
 }
+.membership-section{
+    max-width:1200px;
+    margin:120px auto;
+    padding:0 40px;
+}
+
+.membership-card{
+    background:#111;
+    border:1px solid rgba(212,175,55,.25);
+    border-radius:28px;
+    padding:55px;
+}
