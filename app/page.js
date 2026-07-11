@@ -36,7 +36,7 @@ const featuredCars = [
 const packageDetails = {
   "full-level-1": {
     level: "Level 1",
-    title: "Interior / Exterior Detail",
+    title: "Full Detail",
     price: "$100–120",
     description: "Essential care for regularly maintained vehicles.",
     interior: [
@@ -56,7 +56,7 @@ const packageDetails = {
 
   "full-level-2": {
     level: "Level 2",
-    title: "Interior / Exterior Detail",
+    title: "Full Detail",
     price: "$130–160",
     description:
       "Deeper interior cleaning paired with a more refined exterior detail.",
@@ -77,7 +77,7 @@ const packageDetails = {
 
   "full-level-3": {
     level: "Level 3",
-    title: "Interior / Exterior Detail",
+    title: "Full Detail",
     price: "$160–200",
     description:
       "Our most complete interior and exterior restoration package.",
@@ -92,6 +92,193 @@ const packageDetails = {
       "Paint decontamination",
       "Engine bay detail",
       "Premium ceramic sealant",
+    ],
+  },
+
+  "interior-level-1": {
+    level: "Level 1",
+    title: "Interior Detail",
+    price: "$60–80",
+    description: "Essential interior refresh.",
+    interior: [
+      "Interior vacuum",
+      "Dashboard and console cleaned",
+      "Door panels cleaned",
+      "Interior windows cleaned",
+      "Floor mats cleaned",
+      "Light dust removal",
+    ],
+  },
+
+  "interior-level-2": {
+    level: "Level 2",
+    title: "Interior Detail",
+    price: "$90–120",
+    description: "Deep interior refresh.",
+    interior: [
+      "Everything included in Level 1",
+      "Steam cleaning",
+      "Carpet and floor mat shampoo",
+      "Leather and vinyl conditioning",
+      "Cup holders and compartments cleaned",
+      "Air vents detailed",
+      "Light stain removal",
+    ],
+  },
+
+  "interior-level-3": {
+    level: "Level 3",
+    title: "Interior Detail",
+    price: "$130–170",
+    description: "Complete interior rejuvenation.",
+    interior: [
+      "Everything included in Level 2",
+      "Heavy stain treatment",
+      "Pet hair removal where required",
+      "Deep fabric extraction",
+      "Headliner spot cleaning",
+      "Complete interior restoration",
+    ],
+  },
+
+  "exterior-level-1": {
+    level: "Level 1",
+    title: "Exterior Detail",
+    price: "$50–60",
+    description: "Essential exterior maintenance.",
+    exterior: [
+      "Pre-rinse",
+      "Foam hand wash",
+      "Wheels and tires cleaned",
+      "Tire dressing applied",
+      "Exterior windows cleaned",
+      "Door jambs wiped",
+      "Light bug removal",
+    ],
+  },
+
+  "exterior-level-2": {
+    level: "Level 2",
+    title: "Exterior Detail",
+    price: "$70–100",
+    description: "Deeper exterior cleaning with added protection.",
+    exterior: [
+      "Everything included in Level 1",
+      "Iron decontamination",
+      "Clay bar treatment",
+      "Wheel barrels deep cleaned",
+      "Plastic trim restored",
+      "Ceramic sealant applied",
+      "Water spot removal where possible",
+    ],
+  },
+
+  "exterior-level-3": {
+    level: "Level 3",
+    title: "Exterior Detail",
+    price: "$100–150",
+    description: "Complete exterior restoration and protection.",
+    exterior: [
+      "Everything included in Level 2",
+      "Engine bay detail",
+      "Premium ceramic sealant",
+      "Exhaust tips polished",
+      "Paint decontamination",
+      "Exterior trim restoration",
+      "Fine-detail finishing touches",
+    ],
+  },
+
+  "ceramic-exterior": {
+    level: "Ceramic Coating",
+    title: "Exterior Ceramic Coating",
+    price: "Starting at $699",
+    description:
+      "Long-lasting paint protection with enhanced gloss and hydrophobic performance.",
+    exterior: [
+      "Complete exterior detail",
+      "Iron decontamination",
+      "Clay bar treatment",
+      "One-step paint enhancement polish",
+      "Professional ceramic coating applied",
+    ],
+  },
+
+  "ceramic-interior": {
+    level: "Ceramic Coating",
+    title: "Interior Ceramic Coating",
+    price: "$200–300",
+    description:
+      "Protect leather, plastics, vinyl, and fabric from everyday wear.",
+    interior: [
+      "Complete Level 2 Interior Detail",
+      "Leather protection",
+      "Plastic and vinyl protection",
+      "Fabric protection",
+      "UV protection",
+      "Easier future maintenance",
+    ],
+  },
+
+  "addon-pethair": {
+    level: "Add-On",
+    title: "Pet Hair Removal",
+    price: "Custom Quote",
+    description: "Condition-based pet hair removal.",
+    interior: [
+      "Seat hair removal",
+      "Carpet extraction",
+      "Compressed air",
+      "Condition-based pricing",
+    ],
+  },
+
+  "addon-sap": {
+    level: "Add-On",
+    title: "Tree Sap Removal",
+    price: "Custom Quote",
+    description: "Paint-safe tree sap removal.",
+    exterior: [
+      "Paint-safe removal",
+      "Exterior treatment",
+      "Condition-based pricing",
+    ],
+  },
+
+  "addon-headlights": {
+    level: "Add-On",
+    title: "Headlight Restoration",
+    price: "Custom Quote",
+    description: "Restore clarity and improve appearance.",
+    exterior: [
+      "Wet sanding",
+      "Machine polishing",
+      "UV protection",
+    ],
+  },
+
+  "addon-decon": {
+    level: "Add-On",
+    title: "Paint Decontamination",
+    price: "Custom Quote",
+    description: "Remove bonded contamination from the paint.",
+    exterior: [
+      "Iron remover",
+      "Clay bar treatment",
+      "Paint preparation",
+    ],
+  },
+
+  "addon-enhancement": {
+    level: "Add-On",
+    title: "Paint Enhancement",
+    price: "Custom Quote",
+    description: "Improve gloss and reduce light imperfections.",
+    exterior: [
+      "Machine polish",
+      "Gloss enhancement",
+      "Light swirl reduction",
+      "Ceramic sealant option",
     ],
   },
 };
