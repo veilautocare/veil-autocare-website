@@ -1,38 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./globals.css";
 
-const featuredCars = [
-  {
-    src: "/images/m5.jpeg",
-    label: "BMW M5 Competition",
-    services: [
-      "Maintenance Detail",
-    ],
-  },
-  {
-    src: "/images/gle63.jpeg",
-    label: "Mercedes-AMG GLE 63 S",
-    services: [
-      "Ceramic Maintenance",
-    ],
-  },
-  {
-    src: "/images/range-rover.jpeg",
-    label: "Range Rover Autobiography",
-    services: [
-      "Ceramic Maintenance",
-    ],
-  },
-  {
-    src: "/images/cls550.jpeg",
-    label: "Mercedes-Benz CLS550",
-    services: [
-      "Premium Detail",
-    ],
-  },
-];
+
 const packageDetails = {
   "full-level-1": {
     level: "Level 1",
@@ -282,7 +253,89 @@ const packageDetails = {
     ],
   },
 };
+function RandomWorkCard({ images, cardIndex }) {
+  const [activeImage, setActiveImage] = useState(0);
 
+  useEffect(() => {
+    if (images.length === 0) return;
+
+    setActiveImage(cardIndex % images.length);
+
+    if (images.length === 1) return;
+
+    const interval = setInterval(() => {
+      setActiveImage((current) => {
+        let next = current;
+
+        while (next === current) {
+          next = Math.floor(Math.random() * images.length);
+        }
+
+        return next;
+      });
+    }, 3200 + cardIndex * 550);
+
+    return () => clearInterval(interval);
+  }, [images, cardIndex]);
+
+  if (!images.length) return null;
+
+  return (
+    <article className="work-card">
+      <div className="work-image-slider">
+        {images.map((image, index) => (
+          <img
+            key={image}
+            src={image}
+            alt="Vehicle detailed by Veil Auto Care"
+            className={index === activeImage ? "active" : ""}
+          />
+        ))}
+      </div>
+    </article>
+  );
+}
+
+function WorkGallery() {
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    async function loadImages() {
+      try {
+        const response = await fetch("/api/work-images", {
+          cache: "no-store",
+        });
+
+        if (!response.ok) {
+          throw new Error("Could not load work images");
+        }
+
+        const imageFiles = await response.json();
+        setImages(imageFiles);
+      } catch (error) {
+        console.error("Gallery error:", error);
+      }
+    }
+
+    loadImages();
+  }, []);
+
+  if (!images.length) {
+    return <p className="work-loading">Loading gallery...</p>;
+  }
+
+  return (
+    <div className="work-grid">
+      {[0, 1, 2, 3].map((cardIndex) => (
+        <RandomWorkCard
+          key={cardIndex}
+          images={images}
+          cardIndex={cardIndex}
+        />
+      ))}
+    </div>
+  );
+}
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeService, setActiveService] = useState("full");
@@ -710,25 +763,7 @@ const [selectedPackage, setSelectedPackage] = useState(null);
     </div>
   </div>
 
-  <div className="work-grid">
-    {featuredCars.map((car) => (
-      <article className="work-card" key={car.label}>
-        <img src={car.src} alt={car.label} />
-
-        <div className="work-overlay" />
-
-        <div className="work-info">
-          <h3>{car.label}</h3>
-
-          <div className="work-services">
-            {car.services.map((service) => (
-              <span key={service}>{service}</span>
-            ))}
-          </div>
-        </div>
-      </article>
-    ))}
-  </div>
+<WorkGallery />
 </section>
 
   <section className="section statement">
