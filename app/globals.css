@@ -469,15 +469,22 @@ h1 {
 @media (min-width: 761px) {
   .work-card:nth-child(1) img,
   .work-card:nth-child(4) img {
+    object-fit: cover;
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    background: #111;
-    transform: scale(0.92);
+    transform: none;
+  }
+
+  .work-card:nth-child(1) img {
+    object-position: center 35%;
+  }
+
+  .work-card:nth-child(4) img {
+    object-position: center 40%;
   }
 
   .work-card:nth-child(1):hover img,
   .work-card:nth-child(4):hover img {
-    transform: scale(0.92);
+    transform: none;
   }
 }
