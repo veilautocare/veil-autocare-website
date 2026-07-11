@@ -804,6 +804,7 @@ const [selectedPackage, setSelectedPackage] = useState(null);
   </div>
 </section>
     <section className="section membership-section">
+    <div className="membership-card">
   <div className="membership-heading">
     <p className="eyebrow">Maintenance Membership</p>
     <h2>Protect the finish. Preserve the experience.</h2>
@@ -872,6 +873,8 @@ const [selectedPackage, setSelectedPackage] = useState(null);
   <p className="membership-note">
     Maintenance memberships are available after an initial detail.
   </p>
+        
+</div>
 </section>
     <section id="work" className="section work-section">
   <div className="section-heading horizontal">
