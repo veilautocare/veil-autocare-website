@@ -352,11 +352,101 @@ const [selectedPackage, setSelectedPackage] = useState(null);
       </p>
     )}
 
-    {activeService === "addons" && (
-      <p className="service-placeholder">
-        Add-ons are being added next.
-      </p>
-    )}
+   {activeService === "addons" && (
+  <>
+    <article className="package-card">
+      <p className="package-level">Pet Hair Removal</p>
+      <h3>Custom Quote</h3>
+
+      <ul>
+        <li>Seat hair removal</li>
+        <li>Carpet extraction</li>
+        <li>Compressed air</li>
+        <li>Condition based pricing</li>
+      </ul>
+
+      <button
+        className="package-button"
+        onClick={() => setSelectedPackage("addon-pethair")}
+      >
+        Select Package
+      </button>
+    </article>
+
+    <article className="package-card">
+      <p className="package-level">Tree Sap Removal</p>
+      <h3>Custom Quote</h3>
+
+      <ul>
+        <li>Paint-safe removal</li>
+        <li>Exterior treatment</li>
+        <li>Condition based pricing</li>
+      </ul>
+
+      <button
+        className="package-button"
+        onClick={() => setSelectedPackage("addon-sap")}
+      >
+        Select Package
+      </button>
+    </article>
+
+    <article className="package-card">
+      <p className="package-level">Headlight Restoration</p>
+      <h3>Custom Quote</h3>
+
+      <ul>
+        <li>Wet sanding</li>
+        <li>Machine polishing</li>
+        <li>UV protection</li>
+      </ul>
+
+      <button
+        className="package-button"
+        onClick={() => setSelectedPackage("addon-headlights")}
+      >
+        Select Package
+      </button>
+    </article>
+
+    <article className="package-card">
+      <p className="package-level">Paint Decontamination</p>
+      <h3>Custom Quote</h3>
+
+      <ul>
+        <li>Iron remover</li>
+        <li>Clay bar treatment</li>
+        <li>Paint preparation</li>
+      </ul>
+
+      <button
+        className="package-button"
+        onClick={() => setSelectedPackage("addon-decon")}
+      >
+        Select Package
+      </button>
+    </article>
+
+    <article className="package-card">
+      <p className="package-level">Paint Enhancement</p>
+      <h3>Custom Quote</h3>
+
+      <ul>
+        <li>Machine polish</li>
+        <li>Gloss enhancement</li>
+        <li>Light swirl reduction</li>
+        <li>Ceramic sealant option</li>
+      </ul>
+
+      <button
+        className="package-button"
+        onClick={() => setSelectedPackage("addon-enhancement")}
+      >
+        Select Package
+      </button>
+    </article>
+  </>
+)}
   </div>
 </section>
     <section id="work" className="section work-section">
