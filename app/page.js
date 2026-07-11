@@ -284,7 +284,6 @@ const [selectedPackage, setSelectedPackage] = useState(null);
         <li>Wheels and tires cleaned</li>
         <li>Tire dressing applied</li>
         <li>Exterior windows cleaned</li>
-        <li>Door jambs wiped</li>
         <li>Light bug removal</li>
       </ul>
 
@@ -305,11 +304,12 @@ const [selectedPackage, setSelectedPackage] = useState(null);
       </p>
 
       <ul>
-        <li>Everything in Level 1</li>
-        
+        <li>Everything in Level 1</li> 
         <li>Wheel barrels deep cleaned</li>
         <li>Plastic trim restored</li>
         <li>Water spot removal where possible</li>
+        <li>Door jambs wiped</li>
+        <li>Heavy Bug Removal</li>
       </ul>
 
       <button
