@@ -359,6 +359,7 @@ const [selectedPackage, setSelectedPackage] = useState(null);
       <h3>Custom Quote</h3>
 
       <ul>
+     
         <li>Seat hair removal</li>
         <li>Carpet extraction</li>
         <li>Compressed air</li>
