@@ -212,7 +212,7 @@ h1 {
 }
 .work-card {
   position: relative;
-  min-height: 560px;
+  min-height: 700px;
   overflow: hidden;
   border-radius: 4px;
   background: #111;
@@ -349,7 +349,7 @@ h1 {
 }
 
 .work-card {
-  min-height: 430px;
+  min-height: 550px;
 }
 
 .work-card img {
