@@ -767,24 +767,27 @@ const [selectedPackage, setSelectedPackage] = useState(null);
         <p>{selectedDetails.description}</p>
       </div>
 
-      <div className="package-modal-group">
-        <h3>Interior</h3>
-        <ul>
-          {selectedDetails.interior.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-      </div>
+      {selectedDetails.interior && (
+  <div className="package-modal-group">
+    <h3>Interior</h3>
+    <ul>
+      {selectedDetails.interior.map((item) => (
+        <li key={item}>{item}</li>
+      ))}
+    </ul>
+  </div>
+)}
 
-      <div className="package-modal-group">
-        <h3>Exterior</h3>
-        <ul>
-          {selectedDetails.exterior.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-      </div>
-
+{selectedDetails.exterior && (
+  <div className="package-modal-group">
+    <h3>Exterior</h3>
+    <ul>
+      {selectedDetails.exterior.map((item) => (
+        <li key={item}>{item}</li>
+      ))}
+    </ul>
+  </div>
+)}
       <p className="package-modal-note">
         We’ll confirm your vehicle size, service location, and appointment
         time before your booking is finalized.
