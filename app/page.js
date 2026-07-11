@@ -199,11 +199,77 @@ const [selectedPackage, setSelectedPackage] = useState(null);
       </>
     )}
 
-    {activeService === "interior" && (
-      <p className="service-placeholder">
-        Interior packages are being added next.
-      </p>
-    )}
+ {activeService === "interior" && (
+  <>
+    <article className="package-card">
+      <p className="package-level">Level 1 Interior Detail</p>
+      <h3>Starting at $60</h3>
+      <p className="package-description">Essential interior refresh.</p>
+
+      <ul>
+        <li>Interior vacuum</li>
+        <li>Dashboard and console cleaned</li>
+        <li>Door panels cleaned</li>
+        <li>Interior windows cleaned</li>
+        <li>Floor mats cleaned</li>
+        <li>Light dust removal</li>
+      </ul>
+
+      <button
+        className="package-button"
+        onClick={() => setSelectedPackage("interior-level-1")}
+      >
+        Select Package
+      </button>
+    </article>
+
+    <article className="package-card featured">
+      <span className="package-badge">Best Value</span>
+      <p className="package-level">Level 2 Interior Detail</p>
+      <h3>Starting at $90</h3>
+      <p className="package-description">Deep interior refresh.</p>
+
+      <ul>
+        <li>Everything in Level 1</li>
+        <li>Steam cleaning</li>
+        <li>Carpet and floor mat shampoo</li>
+        <li>Leather and vinyl conditioning</li>
+        <li>Cup holders and compartments cleaned</li>
+        <li>Air vents detailed</li>
+        <li>Light stain removal</li>
+      </ul>
+
+      <button
+        className="package-button"
+        onClick={() => setSelectedPackage("interior-level-2")}
+      >
+        Select Package
+      </button>
+    </article>
+
+    <article className="package-card">
+      <p className="package-level">Level 3 Interior Detail</p>
+      <h3>Starting at $130</h3>
+      <p className="package-description">Complete interior rejuvenation.</p>
+
+      <ul>
+        <li>Everything in Level 2</li>
+        <li>Heavy stain treatment</li>
+        <li>Pet hair removal where required</li>
+        <li>Deep fabric extraction</li>
+        <li>Headliner spot cleaning</li>
+        <li>Complete interior restoration</li>
+      </ul>
+
+      <button
+        className="package-button"
+        onClick={() => setSelectedPackage("interior-level-3")}
+      >
+        Select Package
+      </button>
+    </article>
+  </>
+)}
 
     {activeService === "exterior" && (
       <p className="service-placeholder">
