@@ -280,7 +280,7 @@ function RandomWorkCard({ images, cardIndex }) {
 
   return (
     <article className="work-card">
-      <div className="work-image-slider">
+      <div className="image-stack">
         {images.map((image, index) => (
           <img
             key={image}
