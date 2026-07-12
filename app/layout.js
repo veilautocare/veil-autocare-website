@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Veil Auto Care | Premium Mobile Detailing in Surrey",
+  title: "Veil Auto Care ,
   description:
-    "Premium mobile auto detailing, paint correction, ceramic coatings, and maintenance services in Surrey, BC.",
+    "Premium mobile detailing, paint correction, ceramic coatings, and maintenance services in Surrey, BC.",
 };
 
 export default function RootLayout({ children }) {
