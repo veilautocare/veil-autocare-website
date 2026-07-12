@@ -1136,3 +1136,50 @@ h1 {
   color: rgba(255, 255, 255, 0.5);
   font-size: 14px;
 }
+@media (max-width: 768px) {
+  .membership-card {
+    padding: 28px 20px;
+  }
+
+  .membership-panel {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+
+  .membership-copy,
+  .membership-details {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .membership-copy h3 {
+    font-size: 44px;
+    line-height: 1.05;
+  }
+
+  .membership-price {
+    font-size: 24px;
+  }
+
+  .membership-description {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .membership-details {
+    padding: 24px 22px;
+  }
+
+  .membership-details li {
+    font-size: 17px;
+    line-height: 1.45;
+  }
+
+  .membership-button {
+    width: 100%;
+  }
+  .membership-section {
+  padding-bottom: 120px;
+ }
+}
