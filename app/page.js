@@ -388,6 +388,7 @@ export default function Home() {
   const [activeService, setActiveService] = useState("full");
 const [selectedPackage, setSelectedPackage] = useState(null);
   const [activeMembership, setActiveMembership] = useState("essential");
+  const [selectedMembership, setSelectedMembership] = useState(null);
   
   const selectedDetails = selectedPackage
   ? packageDetails[selectedPackage]
@@ -861,12 +862,13 @@ const [selectedPackage, setSelectedPackage] = useState(null);
         ))}
       </ul>
 
-      <a
-        href="sms:7789399958"
-        className="membership-button"
-      >
-        {membershipPlans[activeMembership].button}
-      </a>
+      <button
+  type="button"
+  className="membership-button"
+  onClick={() => setSelectedMembership(activeMembership)}
+>
+  {membershipPlans[activeMembership].button}
+</button>
     </div>
   </div>
 
@@ -961,7 +963,75 @@ const [selectedPackage, setSelectedPackage] = useState(null);
     </div>
   </div>
 )}
+{selectedMembership && (
+  <div
+    className="package-modal-backdrop"
+    onClick={() => setSelectedMembership(null)}
+  >
+    <div
+      className="package-modal"
+      onClick={(event) => event.stopPropagation()}
+    >
+      <button
+        className="package-modal-close"
+        onClick={() => setSelectedMembership(null)}
+        aria-label="Close membership details"
+      >
+        ×
+      </button>
 
+      <p className="package-modal-level">Maintenance Membership</p>
+
+      <h2>{membershipPlans[selectedMembership].name}</h2>
+
+      <div className="package-modal-summary">
+        <div>
+          <span>Schedule</span>
+          <strong>{membershipPlans[selectedMembership].schedule}</strong>
+        </div>
+
+        <div>
+          <span>Price</span>
+          <strong>{membershipPlans[selectedMembership].price}</strong>
+        </div>
+      </div>
+
+      <p className="package-modal-description">
+        {membershipPlans[selectedMembership].description}
+      </p>
+
+      <div className="package-modal-group">
+        <h3>Included</h3>
+
+        <ul>
+          {membershipPlans[selectedMembership].items.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </div>
+
+      <p className="package-modal-note">
+        Maintenance memberships are available after an initial detail.
+      </p>
+
+      <div className="package-modal-actions">
+        <a
+          href="sms:7789399958"
+          className="package-modal-button primary"
+        >
+          Message to Join
+        </a>
+
+        <a
+          href="tel:7789399958"
+          className="package-modal-button"
+        >
+          Call
+        </a>
+      </div>
+    </div>
+  </div>
+)}
       <footer id="contact" className="footer">
         <div>
           <img src="/images/logo-v2.png" alt="Veil Auto Care" />
