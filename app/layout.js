@@ -10,6 +10,10 @@ export const metadata = {
     canonical: "/",
   },
 
+  icons: {
+  icon: "/favicon.PNG",
+},
+  
   openGraph: {
     title: "Veil Auto Care",
     description:
