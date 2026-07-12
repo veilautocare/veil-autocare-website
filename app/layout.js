@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Veil Auto Care,
+  title: "Veil Auto Care" ,
   description:
     "Premium auto detailing, paint correction, ceramic coatings, and maintenance services in Surrey, BC.",
 };
