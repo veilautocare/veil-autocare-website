@@ -890,13 +890,23 @@ const [selectedPackage, setSelectedPackage] = useState(null);
 <WorkGallery />
 </section>
 
-  <section className="section statement">
-        <p className="eyebrow">Premium Detailing</p>
-        <h2>Premium auto detailing, done right.</h2>
-        <p>
-          Professional interior, exterior, ceramic protection, and maintenance detailing. Visit us or book our mobile service.
-        </p>
-      </section>
+<section className="section reviews-section">
+  <div className="reviews-heading">
+    <p className="eyebrow">Google Reviews</p>
+    <h2>Trusted by our clients.</h2>
+  </div>
+
+  <ReviewsCarousel />
+
+  <a
+    className="reviews-button"
+    href="#"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    View All Google Reviews
+  </a>
+</section>
       {selectedDetails && (
   <div
     className="package-modal-backdrop"
