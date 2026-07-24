@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import "./globals.css";
-import { googleReviews } from "./data/reviews";
+import { googleReviews } from "./reviews";
 
 
 const packageDetails = {
