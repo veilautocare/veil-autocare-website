@@ -1181,3 +1181,141 @@ h1 {
 .statement {
   padding-top: 20px;
 }
+/* GOOGLE REVIEWS */
+
+.reviews-section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  text-align: center;
+}
+
+.reviews-heading {
+  margin-bottom: 36px;
+}
+
+.reviews-heading .eyebrow {
+  margin: 0;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.reviews-heading h2 {
+  margin: 10px 0 0;
+  color: #ffffff;
+  font-size: clamp(30px, 4vw, 46px);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+  margin: 0 auto 34px;
+}
+
+.review-card {
+  display: flex;
+  min-height: 285px;
+  flex-direction: column;
+  padding: 28px;
+  text-align: left;
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+}
+
+.review-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.review-stars {
+  color: #f4b400;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.google-badge {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 50%;
+  color: #4285f4;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.review-text {
+  flex: 1;
+  margin: 0 0 26px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.review-author {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.review-author strong {
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.review-author span {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+}
+
+.reviews-button {
+  display: inline-flex;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 26px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.reviews-button:hover {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+@media (max-width: 800px) {
+  .reviews-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .reviews-grid {
+    display: block;
+  }
+
+  .review-card {
+    min-height: 300px;
+  }
+
+  .review-card:nth-child(n + 2) {
+    display: none;
+  }
+}
