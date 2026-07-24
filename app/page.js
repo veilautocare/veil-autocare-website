@@ -355,22 +355,33 @@ function parseReview(review) {
 }
 
 function RandomReviewCard({ reviews, cardIndex }) {
-  const [activeReview, setActiveReview] = useState(cardIndex % reviews.length);
+  const [activeReview, setActiveReview] = useState(
+    cardIndex % reviews.length
+  );
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     if (reviews.length < 2) return;
 
     const interval = setInterval(() => {
-      setActiveReview((current) => {
-        let next;
+      setIsVisible(false);
 
-        do {
-          next = Math.floor(Math.random() * reviews.length);
-        } while (next === current);
+      const changeReview = setTimeout(() => {
+        setActiveReview((current) => {
+          let next;
 
-        return next;
-      });
-    }, 6000 + cardIndex * 800);
+          do {
+            next = Math.floor(Math.random() * reviews.length);
+          } while (next === current);
+
+          return next;
+        });
+
+        setIsVisible(true);
+      }, 450);
+
+      return () => clearTimeout(changeReview);
+    }, 7000 + cardIndex * 1200);
 
     return () => clearInterval(interval);
   }, [reviews.length, cardIndex]);
@@ -378,9 +389,16 @@ function RandomReviewCard({ reviews, cardIndex }) {
   const review = parseReview(reviews[activeReview]);
 
   return (
-    <article className="review-card">
+    <article
+      className={`review-card ${
+        isVisible ? "review-visible" : "review-hidden"
+      }`}
+    >
       <div className="review-top">
-        <div className="review-stars">
+        <div
+          className="review-stars"
+          aria-label={`${review.rating} out of 5 stars`}
+        >
           {"★".repeat(review.rating)}
         </div>
 
