@@ -334,6 +334,82 @@ function WorkGallery() {
     </div>
   );
 }
+function parseReview(review) {
+  const lines = review
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean);
+
+  const starLineIndex = lines.findIndex((line) => line.includes("★"));
+  const rating =
+    starLineIndex !== -1
+      ? (lines[starLineIndex].match(/★/g) || []).length
+      : 5;
+
+  return {
+    name: lines[0] || "Google Customer",
+    rating,
+    date: lines[starLineIndex + 1] || "",
+    text: lines.slice(starLineIndex + 2).join(" "),
+  };
+}
+
+function RandomReviewCard({ reviews, cardIndex }) {
+  const [activeReview, setActiveReview] = useState(cardIndex % reviews.length);
+
+  useEffect(() => {
+    if (reviews.length < 2) return;
+
+    const interval = setInterval(() => {
+      setActiveReview((current) => {
+        let next;
+
+        do {
+          next = Math.floor(Math.random() * reviews.length);
+        } while (next === current);
+
+        return next;
+      });
+    }, 6000 + cardIndex * 800);
+
+    return () => clearInterval(interval);
+  }, [reviews.length, cardIndex]);
+
+  const review = parseReview(reviews[activeReview]);
+
+  return (
+    <article className="review-card">
+      <div className="review-top">
+        <div className="review-stars">
+          {"★".repeat(review.rating)}
+        </div>
+
+        <div className="google-badge">G</div>
+      </div>
+
+      <p className="review-text">{review.text}</p>
+
+      <div className="review-author">
+        <strong>{review.name}</strong>
+        <span>{review.date}</span>
+      </div>
+    </article>
+  );
+}
+
+function ReviewsCarousel() {
+  return (
+    <div className="reviews-grid">
+      {[0, 1, 2].map((index) => (
+        <RandomReviewCard
+          key={index}
+          reviews={googleReviews}
+          cardIndex={index}
+        />
+      ))}
+    </div>
+  );
+}
 const membershipPlans = {
   essential: {
     name: "Essential",
