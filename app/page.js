@@ -354,91 +354,82 @@ function parseReview(review) {
   };
 }
 
-function RandomReviewCard({ reviews, cardIndex }) {
-  const [activeReview, setActiveReview] = useState(
-    cardIndex % reviews.length
-  );
-  const [isVisible, setIsVisible] = useState(true);
-  const [paused, setPaused] = useState(false);
-
-  useEffect(() => {
-    if (reviews.length < 2 || paused) return;
-
-    let changeTimeout;
-
-    const interval = setInterval(() => {
-      setIsVisible(false);
-
-      changeTimeout = setTimeout(() => {
-        setActiveReview((current) => {
-          let next;
-
-          do {
-            next = Math.floor(Math.random() * reviews.length);
-          } while (next === current);
-
-          return next;
-        });
-
-        setIsVisible(true);
-      }, 300);
-    }, 7000 + cardIndex * 1200);
-
-    return () => {
-      clearInterval(interval);
-      clearTimeout(changeTimeout);
-    };
-  }, [reviews.length, cardIndex, paused]);
-
-  const review = parseReview(reviews[activeReview]);
-
-  return (
-    <article
-      className="review-card"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-    >
-      <div
-        className={`review-content ${
-          isVisible ? "review-visible" : "review-hidden"
-        }`}
-      >
-        <div className="review-top">
-          <div
-            className="review-stars"
-            aria-label={`${review.rating} out of 5 stars`}
-          >
-            {"★".repeat(review.rating)}
-          </div>
-
-          <div className="google-badge" aria-label="Google review">
-            G
-          </div>
-        </div>
-
-        <p className="review-text">{review.text}</p>
-
-        <div className="review-author">
-          <strong>{review.name}</strong>
-          <span>{review.date}</span>
-        </div>
-      </div>
-    </article>
-  );
-}
 
 function ReviewsCarousel() {
-  if (!googleReviews.length) return null;
+  const parsedReviews = googleReviews.map(parseReview);
+  const [startIndex, setStartIndex] = useState(0);
+
+  const reviewsPerPage = 3;
+
+  function previousReviews() {
+    setStartIndex((current) =>
+      current === 0
+        ? Math.max(parsedReviews.length - reviewsPerPage, 0)
+        : Math.max(current - 1, 0)
+    );
+  }
+
+  function nextReviews() {
+    setStartIndex((current) =>
+      current + reviewsPerPage >= parsedReviews.length
+        ? 0
+        : current + 1
+    );
+  }
+
+  const visibleReviews = Array.from({ length: reviewsPerPage }, (_, index) => {
+    return parsedReviews[(startIndex + index) % parsedReviews.length];
+  });
+
+  if (!parsedReviews.length) return null;
 
   return (
-    <div className="reviews-grid">
-      {[0, 1, 2].map((index) => (
-        <RandomReviewCard
-          key={index}
-          reviews={googleReviews}
-          cardIndex={index}
-        />
-      ))}
+    <div className="reviews-carousel">
+      <div className="reviews-grid">
+        {visibleReviews.map((review, index) => (
+          <article className="review-card" key={`${startIndex}-${index}`}>
+            <div className="review-top">
+              <div
+                className="review-stars"
+                aria-label={`${review.rating} out of 5 stars`}
+              >
+                {"★".repeat(review.rating)}
+              </div>
+
+              <div className="google-badge" aria-label="Google review">
+                G
+              </div>
+            </div>
+
+            <p className="review-text">{review.text}</p>
+
+            <div className="review-author">
+              <strong>{review.name}</strong>
+              <span>{review.date}</span>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div className="reviews-controls">
+        <button
+          type="button"
+          className="review-arrow"
+          onClick={previousReviews}
+          aria-label="Previous reviews"
+        >
+          ←
+        </button>
+
+        <button
+          type="button"
+          className="review-arrow"
+          onClick={nextReviews}
+          aria-label="Next reviews"
+        >
+          →
+        </button>
+      </div>
     </div>
   );
 }
