@@ -1337,3 +1337,39 @@ h1 {
   transform: translateY(10px);
   filter: blur(3px);
 }
+.review-card {
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease,
+    filter 0.45s ease;
+}
+
+.review-visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.review-hidden {
+  opacity: 0;
+  transform: translateY(10px);
+  filter: blur(3px);
+}
+.review-card {
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease,
+    filter 0.45s ease;
+}
+
+.review-visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.review-hidden {
+  opacity: 0;
+  transform: translateY(10px);
+  filter: blur(3px);
+}
