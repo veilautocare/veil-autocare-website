@@ -1413,3 +1413,51 @@ h1 {
     display: flex;
   }
 }
+.reviews-carousel {
+  width: 100%;
+  overflow: hidden;
+}
+
+.reviews-grid {
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.reviews-slide-left {
+  opacity: 0;
+  transform: translateX(-35px);
+}
+
+.reviews-slide-right {
+  opacity: 0;
+  transform: translateX(35px);
+}
+
+.reviews-enter-right {
+  opacity: 0;
+  transform: translateX(35px);
+  transition: none;
+}
+
+.reviews-enter-left {
+  opacity: 0;
+  transform: translateX(-35px);
+  transition: none;
+}
+
+.review-card {
+  min-height: 340px;
+}
+
+.review-text {
+  flex: 1;
+}
+
+.review-arrow {
+  width: 52px;
+  height: 52px;
+  background: #111111;
+  font-size: 32px;
+  line-height: 1;
+}
