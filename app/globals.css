@@ -1355,3 +1355,17 @@ h1 {
   transform: translateY(10px);
   filter: blur(3px);
 }
+.review-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  transition: opacity 0.3s ease;
+}
+
+.review-visible {
+  opacity: 1;
+}
+
+.review-hidden {
+  opacity: 0;
+}
