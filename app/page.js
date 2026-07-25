@@ -394,34 +394,55 @@ function RandomReviewCard({ reviews, cardIndex }) {
 
   return (
     <article
-      className={`review-card ${
-        isVisible ? "review-visible" : "review-hidden"
-      }`}
+      className="review-card"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div className="review-top">
-        <div
-          className="review-stars"
-          aria-label={`${review.rating} out of 5 stars`}
-        >
-          {"★".repeat(review.rating)}
+      <div
+        className={`review-content ${
+          isVisible ? "review-visible" : "review-hidden"
+        }`}
+      >
+        <div className="review-top">
+          <div
+            className="review-stars"
+            aria-label={`${review.rating} out of 5 stars`}
+          >
+            {"★".repeat(review.rating)}
+          </div>
+
+          <div className="google-badge" aria-label="Google review">
+            G
+          </div>
         </div>
 
-        <div className="google-badge" aria-label="Google review">
-          G
+        <p className="review-text">{review.text}</p>
+
+        <div className="review-author">
+          <strong>{review.name}</strong>
+          <span>{review.date}</span>
         </div>
-      </div>
-
-      <p className="review-text">{review.text}</p>
-
-      <div className="review-author">
-        <strong>{review.name}</strong>
-        <span>{review.date}</span>
       </div>
     </article>
   );
 }
+
+function ReviewsCarousel() {
+  if (!googleReviews.length) return null;
+
+  return (
+    <div className="reviews-grid">
+      {[0, 1, 2].map((index) => (
+        <RandomReviewCard
+          key={index}
+          reviews={googleReviews}
+          cardIndex={index}
+        />
+      ))}
+    </div>
+  );
+}
+
 const membershipPlans = {
   essential: {
     name: "Essential",
