@@ -987,14 +987,14 @@ const [selectedPackage, setSelectedPackage] = useState(null);
 
   <ReviewsCarousel />
 
-  <a
-    className="reviews-button"
-    href="#"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    View All Google Reviews
-  </a>
+ <a
+  className="reviews-button"
+  href="https://www.google.com/search?q=Veil+AutoCare+Surrey"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  View All Google Reviews
+</a>
 </section>
       {selectedDetails && (
   <div
