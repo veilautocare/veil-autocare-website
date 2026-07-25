@@ -366,7 +366,7 @@ function RandomReviewCard({ reviews, cardIndex }) {
     const interval = setInterval(() => {
       setIsVisible(false);
 
-      const changeReview = setTimeout(() => {
+      setTimeout(() => {
         setActiveReview((current) => {
           let next;
 
@@ -378,9 +378,7 @@ function RandomReviewCard({ reviews, cardIndex }) {
         });
 
         setIsVisible(true);
-      }, 450);
-
-      return () => clearTimeout(changeReview);
+      }, 300);
     }, 7000 + cardIndex * 1200);
 
     return () => clearInterval(interval);
@@ -395,10 +393,7 @@ function RandomReviewCard({ reviews, cardIndex }) {
       }`}
     >
       <div className="review-top">
-        <div
-          className="review-stars"
-          aria-label={`${review.rating} out of 5 stars`}
-        >
+        <div className="review-stars">
           {"★".repeat(review.rating)}
         </div>
 
