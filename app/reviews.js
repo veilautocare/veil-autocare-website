@@ -17,7 +17,7 @@ Really happy with the detail. The car came out super clean, and you can tell the
 `Gurman Gill
 ★★★★★
 
-Fast, reliable, and efficient work at a reasonable price.`
+Fast, reliable, and efficient work at a reasonable price.`,
 
   
 `Arvin Gakhal
