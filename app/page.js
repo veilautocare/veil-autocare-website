@@ -405,14 +405,21 @@ function ReviewsCarousel() {
     }, 250);
   }
 
-  return (
+return (
+  <>
     <div className="reviews-carousel">
+      <button
+        type="button"
+        className="review-arrow review-arrow-left"
+        onClick={() => changeReviews("previous")}
+        aria-label="Previous reviews"
+      >
+        ‹
+      </button>
+
       <div className={`reviews-grid ${direction}`}>
         {visibleReviews.map((review, index) => (
-          <article
-            className="review-card"
-            key={`${startIndex}-${index}`}
-          >
+          <article className="review-card" key={`${startIndex}-${index}`}>
             <div className="review-top">
               <div
                 className="review-stars"
@@ -421,9 +428,7 @@ function ReviewsCarousel() {
                 {"★".repeat(review.rating)}
               </div>
 
-              <div className="google-badge" aria-label="Google review">
-                G
-              </div>
+              <div className="google-badge">G</div>
             </div>
 
             <p className="review-text">{review.text}</p>
@@ -436,28 +441,26 @@ function ReviewsCarousel() {
         ))}
       </div>
 
-      <div className="reviews-controls">
-        <button
-          type="button"
-          className="review-arrow"
-          onClick={() => changeReviews("previous")}
-          aria-label="Previous reviews"
-        >
-          ‹
-        </button>
-
-        <button
-          type="button"
-          className="review-arrow"
-          onClick={() => changeReviews("next")}
-          aria-label="Next reviews"
-        >
-          ›
-        </button>
-      </div>
+      <button
+        type="button"
+        className="review-arrow review-arrow-right"
+        onClick={() => changeReviews("next")}
+        aria-label="Next reviews"
+      >
+        ›
+      </button>
     </div>
-  );
-}
+
+    <a
+      href="YOUR_GOOGLE_LINK"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="button button-outline"
+    >
+      See All Reviews
+    </a>
+  </>
+);
 
 const membershipPlans = {
   essential: {
