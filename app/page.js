@@ -461,6 +461,7 @@ return (
     </a>
   </>
 );
+}
 
 const membershipPlans = {
   essential: {
