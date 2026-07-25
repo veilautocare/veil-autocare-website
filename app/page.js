@@ -358,36 +358,61 @@ function parseReview(review) {
 function ReviewsCarousel() {
   const parsedReviews = googleReviews.map(parseReview);
   const [startIndex, setStartIndex] = useState(0);
+  const [direction, setDirection] = useState("");
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const reviewsPerPage = 3;
 
-  function previousReviews() {
-    setStartIndex((current) =>
-      current === 0
-        ? Math.max(parsedReviews.length - reviewsPerPage, 0)
-        : Math.max(current - 1, 0)
-    );
-  }
-
-  function nextReviews() {
-    setStartIndex((current) =>
-      current + reviewsPerPage >= parsedReviews.length
-        ? 0
-        : current + 1
-    );
-  }
-
-  const visibleReviews = Array.from({ length: reviewsPerPage }, (_, index) => {
-    return parsedReviews[(startIndex + index) % parsedReviews.length];
-  });
-
   if (!parsedReviews.length) return null;
+
+  const visibleReviews = Array.from(
+    { length: reviewsPerPage },
+    (_, index) =>
+      parsedReviews[(startIndex + index) % parsedReviews.length]
+  );
+
+  function changeReviews(newDirection) {
+    if (isAnimating) return;
+
+    setDirection(
+      newDirection === "next" ? "reviews-slide-left" : "reviews-slide-right"
+    );
+    setIsAnimating(true);
+
+    setTimeout(() => {
+      setStartIndex((current) => {
+        if (newDirection === "next") {
+          return (current + 1) % parsedReviews.length;
+        }
+
+        return (
+          current - 1 + parsedReviews.length
+        ) % parsedReviews.length;
+      });
+
+      setDirection(
+        newDirection === "next"
+          ? "reviews-enter-right"
+          : "reviews-enter-left"
+      );
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setDirection("");
+          setIsAnimating(false);
+        });
+      });
+    }, 250);
+  }
 
   return (
     <div className="reviews-carousel">
-      <div className="reviews-grid">
+      <div className={`reviews-grid ${direction}`}>
         {visibleReviews.map((review, index) => (
-          <article className="review-card" key={`${startIndex}-${index}`}>
+          <article
+            className="review-card"
+            key={`${startIndex}-${index}`}
+          >
             <div className="review-top">
               <div
                 className="review-stars"
@@ -415,19 +440,19 @@ function ReviewsCarousel() {
         <button
           type="button"
           className="review-arrow"
-          onClick={previousReviews}
+          onClick={() => changeReviews("previous")}
           aria-label="Previous reviews"
         >
-          ←
+          ‹
         </button>
 
         <button
           type="button"
           className="review-arrow"
-          onClick={nextReviews}
+          onClick={() => changeReviews("next")}
           aria-label="Next reviews"
         >
-          →
+          ›
         </button>
       </div>
     </div>
