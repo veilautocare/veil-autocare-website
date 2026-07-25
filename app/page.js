@@ -359,14 +359,17 @@ function RandomReviewCard({ reviews, cardIndex }) {
     cardIndex % reviews.length
   );
   const [isVisible, setIsVisible] = useState(true);
+  const [paused, setPaused] = useState(false);
 
   useEffect(() => {
-    if (reviews.length < 2) return;
+    if (reviews.length < 2 || paused) return;
+
+    let changeTimeout;
 
     const interval = setInterval(() => {
       setIsVisible(false);
 
-      setTimeout(() => {
+      changeTimeout = setTimeout(() => {
         setActiveReview((current) => {
           let next;
 
@@ -381,8 +384,11 @@ function RandomReviewCard({ reviews, cardIndex }) {
       }, 300);
     }, 7000 + cardIndex * 1200);
 
-    return () => clearInterval(interval);
-  }, [reviews.length, cardIndex]);
+    return () => {
+      clearInterval(interval);
+      clearTimeout(changeTimeout);
+    };
+  }, [reviews.length, cardIndex, paused]);
 
   const review = parseReview(reviews[activeReview]);
 
@@ -391,13 +397,20 @@ function RandomReviewCard({ reviews, cardIndex }) {
       className={`review-card ${
         isVisible ? "review-visible" : "review-hidden"
       }`}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
     >
       <div className="review-top">
-        <div className="review-stars">
+        <div
+          className="review-stars"
+          aria-label={`${review.rating} out of 5 stars`}
+        >
           {"★".repeat(review.rating)}
         </div>
 
-        <div className="google-badge">G</div>
+        <div className="google-badge" aria-label="Google review">
+          G
+        </div>
       </div>
 
       <p className="review-text">{review.text}</p>
@@ -407,20 +420,6 @@ function RandomReviewCard({ reviews, cardIndex }) {
         <span>{review.date}</span>
       </div>
     </article>
-  );
-}
-
-function ReviewsCarousel() {
-  return (
-    <div className="reviews-grid">
-      {[0, 1, 2].map((index) => (
-        <RandomReviewCard
-          key={index}
-          reviews={googleReviews}
-          cardIndex={index}
-        />
-      ))}
-    </div>
   );
 }
 const membershipPlans = {
