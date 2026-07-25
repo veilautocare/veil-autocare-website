@@ -23,6 +23,6 @@ Fast, reliable, and efficient work at a reasonable price.`
 `Arvin Gakhal
 ★★★★★
 
-Did an excellent job, brought my 80s classic back to showroom condition. Would recommend to everyone. Honest, genuine and reliable.
+Did an excellent job, brought my 80s classic back to showroom condition. Would recommend to everyone. Honest, genuine and reliable.`,
 
 ];
