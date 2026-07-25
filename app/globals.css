@@ -1357,38 +1357,37 @@ h1 {
 }
 
 .reviews-carousel {
-  width: 100%;
-}
-
-.reviews-controls {
+  position: relative;
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 12px;
-  margin-top: 24px;
+  gap: 18px;
 }
 
 .review-arrow {
-  display: inline-flex;
-  width: 48px;
-  height: 48px;
-  align-items: center;
-  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border: none;
   background: transparent;
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  border-radius: 50%;
+  font-size: 42px;
+  font-weight: 300;
   cursor: pointer;
-  font-size: 22px;
-  transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease;
+  transition: color 0.25s ease, transform 0.25s ease;
+  flex-shrink: 0;
 }
 
 .review-arrow:hover {
-  background: #ffffff;
-  color: #000000;
-  border-color: #ffffff;
+  color: #c9a66b;
+  transform: scale(1.15);
+}
+
+.review-arrow-left {
+  margin-right: -8px;
+}
+
+.review-arrow-right {
+  margin-left: -8px;
 }
 
 @media (max-width: 800px) {
