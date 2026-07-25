@@ -26,8 +26,14 @@ Fast, reliable, and efficient work at a reasonable price.`,
   
 `Arvin Gakhal
 ★★★★★
-July 25,2026
+July 24, 2026
 
-Did an excellent job, brought my 80s classic back to showroom condition. Would recommend to everyone. Honest, genuine and reliable.`
+Did an excellent job, brought my 80s classic back to showroom condition. Would recommend to everyone. Honest, genuine and reliable.`,
+
+`Akash Dhaliwal
+★★★★★
+July 25, 2026
+
+Great service, very professional, and excellent attention to detail. Everything was done on time and exceeded my expectations. Would definitely recommend.`
 
 ];
