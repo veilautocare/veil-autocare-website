@@ -1025,7 +1025,7 @@ const [selectedPackage, setSelectedPackage] = useState(null);
 
  <a
   className="reviews-button"
-  href="https://www.google.com/search?q=Veil+AutoCare+Surrey"
+  href="https://www.google.com/maps/place/Veil+AutoCare/@49.1299709,-122.8110359,17z/data=!4m8!3m7!1s0x5485db00793a8f13:0x23a08734341cb8cb!8m2!3d49.1299709!4d-122.808461!9m1!1b1!16s%2Fg%2F11zcvw6s00?entry=ttu#lrd=0x5485db00793a8f13:0x23a08734341cb8cb,1,,,,"
   target="_blank"
   rel="noopener noreferrer"
 >
