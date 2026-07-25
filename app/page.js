@@ -450,15 +450,6 @@ return (
         ›
       </button>
     </div>
-
-    <a
-      href="YOUR_GOOGLE_LINK"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="button button-outline"
-    >
-      See All Reviews
-    </a>
   </>
 );
 }
