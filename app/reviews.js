@@ -36,6 +36,7 @@ July 25, 2026
 Great service, very professional, and excellent attention to detail. Everything was done on time and exceeded my expectations. Would definitely recommend.`,
  
 `Saihaj Cheema
+★★★★★
 July 25, 2026
 Very detailed and time orientated. Left my car shining and I noticed he went the extra step! Very well done.`
 
