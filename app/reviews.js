@@ -22,7 +22,6 @@ Really happy with the detail. The car came out super clean, and you can tell the
 July 12, 2026
 
 Fast, reliable, and efficient work at a reasonable price.`,
-
   
 `Arvin Gakhal
 ★★★★★
@@ -34,6 +33,10 @@ Did an excellent job, brought my 80s classic back to showroom condition. Would r
 ★★★★★
 July 25, 2026
 
-Great service, very professional, and excellent attention to detail. Everything was done on time and exceeded my expectations. Would definitely recommend.`
+Great service, very professional, and excellent attention to detail. Everything was done on time and exceeded my expectations. Would definitely recommend.,`
+ 
+`Saihaj Cheema
+July 25, 2026
+Very detailed and time orientated. Left my car shining and I noticed he went the extra step! Very well done.`
 
 ];
