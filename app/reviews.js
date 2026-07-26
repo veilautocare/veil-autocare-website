@@ -33,7 +33,7 @@ Did an excellent job, brought my 80s classic back to showroom condition. Would r
 ★★★★★
 July 25, 2026
 
-Great service, very professional, and excellent attention to detail. Everything was done on time and exceeded my expectations. Would definitely recommend.,`
+Great service, very professional, and excellent attention to detail. Everything was done on time and exceeded my expectations. Would definitely recommend.`,
  
 `Saihaj Cheema
 July 25, 2026
