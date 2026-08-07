@@ -38,6 +38,14 @@ Great service, very professional, and excellent attention to detail. Everything 
 `Saihaj Cheema
 ★★★★★
 July 25, 2026
-Very detailed and time orientated. Left my car shining and I noticed he went the extra step! Very well done.`
+Very detailed and time orientated. Left my car shining and I noticed he went the extra step! Very well done.`,
 
+`Mehleen Salariya
+★★★★★
+July 27, 2026
+My car was detailed to perfection! The cleanest it’s ever looked on the inside and outside. Definitely recommend!`,
+
+`Parminder Singh Pamma
+August 3, 2026
+Very nice job. Cleaned my Peterbilt truck inside and made it brand new into showroom quality. 👍🏽`
 ];
